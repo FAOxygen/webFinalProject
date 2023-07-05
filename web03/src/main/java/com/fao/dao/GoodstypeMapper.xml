@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fao.dao.GoodstypeMapper">
+    <select id="queryAllGoodstype" resultType="goodstype">
+        select *
+        from goodstype
+    </select>
+    <insert id="addGoodstype" parameterType="goodstype">
+        insert into goods.goodstype(typeId, type)
+        values (#{typeId}, #{type})
+    </insert>
+</mapper>

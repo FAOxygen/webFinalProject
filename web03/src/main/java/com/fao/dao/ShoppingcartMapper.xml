@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fao.dao.ShoppingcartMapper">
+    <select id="queryByUserId" resultType="shoppingcart">
+        select *
+        from shoppingcart
+        where userId = #{userId}
+    </select>
+    <insert id="addShoppingcart" parameterType="shoppingcart">
+        insert into goods.shoppingcart(cartId, userId, goodsId, cartNum)
+        values (#{cartId}, #{userId}, #{goodsId}, #{cartNum})
+    </insert>
+    <select id="queryAllCarts" resultType="shoppingcart">
+        select *
+        from shoppingcart
+    </select>
+    <delete id="clear">
+        delete from shoppingcart where userId = #{userId}
+    </delete>
+</mapper>
